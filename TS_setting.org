@@ -21,6 +21,28 @@ ps -aux | grep start_Recv4421.sh
 ps -aux | grep start_Parser.sh
 ps -aux | grep PM.sh
 #+END_SRC
+* Menjalankan Aplikasi TS
+Beberapa file sebaiknya disimpan dalam direktori /home/${USER} dimana ${USER} merupakan 
+home direktori default ketika dan memasuki server melalui ssh.  Ada Folder yang bernama Trumon
+dan pastikan beberapa file ada disana.
+#+BEGIN_SRC BASH
+tree
+#+END_SRC
+** Konfigurasi Socket Server
+Untuk melakukan konfigurasi socket server anda bisa mengedit bagian file berikut.
+** Konfiguasi ImageReconstrution
+Image reconstruction digunakan untuk merubah file RAW yang merupakan Escape command menjadi 
+file gambar (dalam format PNG)
+** Konfigurasi OCR
+OCR  digunakan untuk merubah file dari image kedalam bentuk text. Dalam pengembangannya 
+Aplikasi TS pernah menggunakan aplikasi pihak ketiga. Beberapa kode terkadang diset oleh 
+developer pihak ketiga atau menggunakan sebuah script yang dibuat prasimax untuk mengirimkan
+data melalui perantara WEB-API. 
+** Konfigurasi Parser 
+Parser digunakan untuk memisahkan data teks kedalam beberapa komponent untuk bisa dimunculkan 
+kedalam data transaksi.
+
+
 * Crontab
 Jika anda ingin menjalankan program dalam crontab[fn:2] anda bisa menggunakan script crontab berikut. 
 Jika kode dibawah tidak bisa berjalan di server anda, anda bisa merubah file ${HOME}
