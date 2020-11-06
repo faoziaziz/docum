@@ -13,13 +13,28 @@ Untuk bisa mengetahui running TS-Receiver anda bisa menggunakan perintah ps[fn:1
 #+BEGIN_SRC bash
 ps -axu | grep TcpServerTS1
 #+END_SRC
-Untuk mengecek service yang barjalan pada bash anda bisa menggunakan perintah 
-berikut. 
+Untuk mengecek service yang berjalan pada bash anda bisa menggunakan perintah 
+berikut. Biasanya service diletakan pada file script bash maka untuk bisa melihat 
+status file bash sedang berjalan atau tidak bisa menggunakan perintah tersebut.
 #+BEGIN_SRC bash
 ps -aux | grep start_Recv4421.sh
 ps -aux | grep start_Parser.sh
 ps -aux | grep PM.sh
 #+END_SRC
+* Crontab
+Jika anda ingin menjalankan program dalam crontab[fn:2] anda bisa menggunakan script crontab berikut. 
+Jika kode dibawah tidak bisa berjalan di server anda, anda bisa merubah file ${HOME}
+dengan login user yang anda miliki, pastinya ini dilakukan untuk bisa menjalankan schedule
+pada aplikasi TS.
+#+BEGIN_SRC
+# engine pdc prasimax
+ * * * * * /bin/sh /home/${HOME}/Trumon/PrintEmulator/PM.sh
+ * * * * * /bin/sh /home/${HOME}/Trumon/Parser/start_Parser.sh
+ * * * * * /bin/sh /home/${HOME}/Trumon/start_Recv3321.sh
+ * * * * * /bin/sh /home/${HOME}/Trumon/start_Recv4421.sh
+#+END_SRC
 
 [fn:1] ps atau process status merupakan program untuk mengetahui program yang sedang berjalan
 link referensi https://en.wikipedia.org/wiki/Ps_(Unix)
+
+[fn:2] Crontab untuk schedulin  https://en.wikipedia.org/wiki/Cron
