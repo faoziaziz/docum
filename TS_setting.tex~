@@ -31,11 +31,11 @@
 
 
 \section{Cara mengetahui service running}
-\label{sec:orge299b2d}
+\label{sec:orgbc1b123}
 Untuk bisa mengetahui service yang sedang berjalan ada bebarapa perintah
 bisa dilakukan 
 \subsection{Mengetahui running untuk TS-Receiver}
-\label{sec:org78b220a}
+\label{sec:orge8c9f30}
 Pada dasarnya setiap socket server yang berjalan untuk menerima data dari
 perangkat merupakan sebuah script yang menjalankan sebuah aplikasi biner 
 yang terdapat dalam folder Trumon. Nama file biner tersebut adalah TcpServerTS1.
@@ -53,7 +53,7 @@ ps -aux | grep start_Parser.sh
 ps -aux | grep PM.sh
 \end{verbatim}
 \section{Menjalankan Aplikasi TS}
-\label{sec:orge85adb5}
+\label{sec:orgba2edb0}
 Beberapa file sebaiknya disimpan dalam direktori /home/\$\{USER\} dimana \$\{USER\} merupakan 
 home direktori default ketika dan memasuki server melalui ssh.  Ada Folder yang bernama Trumon
 dan pastikan beberapa file ada disana.
@@ -61,24 +61,24 @@ dan pastikan beberapa file ada disana.
 tree
 \end{verbatim}
 \subsection{Konfigurasi Socket Server}
-\label{sec:org651958c}
+\label{sec:orgf78129b}
 Untuk melakukan konfigurasi socket server anda bisa mengedit bagian file berikut.
 \subsection{Konfiguasi ImageReconstrution}
-\label{sec:orge4a25f7}
+\label{sec:org0e625d4}
 Image reconstruction digunakan untuk merubah file RAW yang merupakan Escape command menjadi 
 file gambar (dalam format PNG)
 \subsection{Konfigurasi OCR}
-\label{sec:org3e233d0}
+\label{sec:org0b3bbc4}
 OCR  digunakan untuk merubah file dari image kedalam bentuk text. Dalam pengembangannya 
 Aplikasi TS pernah menggunakan aplikasi pihak ketiga. Beberapa kode terkadang diset oleh 
 developer pihak ketiga atau menggunakan sebuah script yang dibuat prasimax untuk mengirimkan
 data melalui perantara WEB-API. 
 \subsection{Konfigurasi Parser}
-\label{sec:org287ada2}
+\label{sec:orga50f300}
 Parser digunakan untuk memisahkan data teks kedalam beberapa komponent untuk bisa dimunculkan 
 kedalam data transaksi.
 \section{Stop Program}
-\label{sec:org44b1418}
+\label{sec:org2f2eeca}
 Beberapa methode bisa anda lakukan dengan untuk melakukan stop program. Anda bisa menggunakan
 perintah top pada bash linux seperti contoh berikut untuk melihat aplikasi apa saja yang 
 sedang berjalan di server
@@ -93,7 +93,7 @@ kill -9 <pid>
 masukkan nilai <pid> dengan nilai pid yang tercantum dalam top atau ps -aux| grep <nama service>
 
 \section{Crontab}
-\label{sec:orgc5814f6}
+\label{sec:org407c7ef}
 Jika anda ingin menjalankan program dalam crontab\footnote{Crontab untuk schedulin  \url{https://en.wikipedia.org/wiki/Cron}} anda bisa menggunakan script crontab berikut. 
 Jika kode dibawah tidak bisa berjalan di server anda, anda bisa merubah file \$\{HOME\}
 dengan login user yang anda miliki, pastinya ini dilakukan untuk bisa menjalankan schedule

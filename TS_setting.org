@@ -54,6 +54,12 @@ Dan anda bisa menjalankan kill untuk menghentikan aplikasi
 kill -9 <pid>
 #+END_SRC
 masukkan nilai <pid> dengan nilai pid yang tercantum dalam top atau ps -aux| grep <nama service>
+Jika anda menggunakan ingin menghentikan perintah bash yang telah diekseksi terlalu banyak gunakan 
+perintah berikut.
+
+#+BEGIN_SRC
+sudo killall sh
+#+END_SRC
 
 * Crontab
 Jika anda ingin menjalankan program dalam crontab[fn:2] anda bisa menggunakan script crontab berikut. 
