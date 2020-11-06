@@ -1,4 +1,4 @@
-% Created 2020-11-06 Jum 20:32
+% Created 2020-11-06 Jum 21:10
 % Intended LaTeX compiler: pdflatex
 \documentclass[11pt]{article}
 \usepackage[utf8]{inputenc}
@@ -31,11 +31,11 @@
 
 
 \section{Cara mengetahui service running}
-\label{sec:org0e8c4ea}
+\label{sec:org6710302}
 Untuk bisa mengetahui service yang sedang berjalan ada bebarapa perintah
 bisa dilakukan 
 \subsection{Mengetahui running untuk TS-Receiver}
-\label{sec:org894eac5}
+\label{sec:orga93119e}
 Pada dasarnya setiap socket server yang berjalan untuk menerima data dari
 perangkat merupakan sebuah script yang menjalankan sebuah aplikasi biner 
 yang terdapat dalam folder Trumon. Nama file biner tersebut adalah TcpServerTS1.
@@ -52,8 +52,35 @@ ps -aux | grep start_Recv4421.sh
 ps -aux | grep start_Parser.sh
 ps -aux | grep PM.sh
 \end{verbatim}
+\section{Menjalankan Aplikasi TS}
+\label{sec:org2ef91e9}
+Beberapa file sebaiknya disimpan dalam direktori /home/\$\{USER\} dimana \$\{USER\} merupakan 
+home direktori default ketika dan memasuki server melalui ssh.  Ada Folder yang bernama Trumon
+dan pastikan beberapa file ada disana.
+\begin{verbatim}
+tree
+\end{verbatim}
+\subsection{Konfigurasi Socket Server}
+\label{sec:orga725157}
+Untuk melakukan konfigurasi socket server anda bisa mengedit bagian file berikut.
+\subsection{Konfiguasi ImageReconstrution}
+\label{sec:org1e9e4b0}
+Image reconstruction digunakan untuk merubah file RAW yang merupakan Escape command menjadi 
+file gambar (dalam format PNG)
+\subsection{Konfigurasi OCR}
+\label{sec:org4cd81da}
+OCR  digunakan untuk merubah file dari image kedalam bentuk text. Dalam pengembangannya 
+Aplikasi TS pernah menggunakan aplikasi pihak ketiga. Beberapa kode terkadang diset oleh 
+developer pihak ketiga atau menggunakan sebuah script yang dibuat prasimax untuk mengirimkan
+data melalui perantara WEB-API. 
+\subsection{Konfigurasi Parser}
+\label{sec:orgc1a8405}
+Parser digunakan untuk memisahkan data teks kedalam beberapa komponent untuk bisa dimunculkan 
+kedalam data transaksi.
+
+
 \section{Crontab}
-\label{sec:org4294d5c}
+\label{sec:org3688a22}
 Jika anda ingin menjalankan program dalam crontab\footnote{Crontab untuk schedulin  \url{https://en.wikipedia.org/wiki/Cron}} anda bisa menggunakan script crontab berikut. 
 Jika kode dibawah tidak bisa berjalan di server anda, anda bisa merubah file \$\{HOME\}
 dengan login user yang anda miliki, pastinya ini dilakukan untuk bisa menjalankan schedule

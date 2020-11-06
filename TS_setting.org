@@ -41,7 +41,13 @@ data melalui perantara WEB-API.
 ** Konfigurasi Parser 
 Parser digunakan untuk memisahkan data teks kedalam beberapa komponent untuk bisa dimunculkan 
 kedalam data transaksi.
-
+* Stop Program
+Beberapa methode bisa anda lakukan dengan untuk melakukan stop program. Anda bisa menggunakan
+perintah top pada bash linux seperti contoh berikut untuk melihat aplikasi apa saja yang 
+sedang berjalan di server
+#+BEGIN_SRC
+top
+#+END_SRC
 
 * Crontab
 Jika anda ingin menjalankan program dalam crontab[fn:2] anda bisa menggunakan script crontab berikut. 

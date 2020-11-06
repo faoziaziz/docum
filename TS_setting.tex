@@ -1,4 +1,4 @@
-% Created 2020-11-06 Jum 21:10
+% Created 2020-11-06 Jum 21:15
 % Intended LaTeX compiler: pdflatex
 \documentclass[11pt]{article}
 \usepackage[utf8]{inputenc}
@@ -31,11 +31,11 @@
 
 
 \section{Cara mengetahui service running}
-\label{sec:org6710302}
+\label{sec:org08dc7c3}
 Untuk bisa mengetahui service yang sedang berjalan ada bebarapa perintah
 bisa dilakukan 
 \subsection{Mengetahui running untuk TS-Receiver}
-\label{sec:orga93119e}
+\label{sec:org868a204}
 Pada dasarnya setiap socket server yang berjalan untuk menerima data dari
 perangkat merupakan sebuah script yang menjalankan sebuah aplikasi biner 
 yang terdapat dalam folder Trumon. Nama file biner tersebut adalah TcpServerTS1.
@@ -53,7 +53,7 @@ ps -aux | grep start_Parser.sh
 ps -aux | grep PM.sh
 \end{verbatim}
 \section{Menjalankan Aplikasi TS}
-\label{sec:org2ef91e9}
+\label{sec:org534a35f}
 Beberapa file sebaiknya disimpan dalam direktori /home/\$\{USER\} dimana \$\{USER\} merupakan 
 home direktori default ketika dan memasuki server melalui ssh.  Ada Folder yang bernama Trumon
 dan pastikan beberapa file ada disana.
@@ -61,26 +61,33 @@ dan pastikan beberapa file ada disana.
 tree
 \end{verbatim}
 \subsection{Konfigurasi Socket Server}
-\label{sec:orga725157}
+\label{sec:org455442f}
 Untuk melakukan konfigurasi socket server anda bisa mengedit bagian file berikut.
 \subsection{Konfiguasi ImageReconstrution}
-\label{sec:org1e9e4b0}
+\label{sec:orgec61d70}
 Image reconstruction digunakan untuk merubah file RAW yang merupakan Escape command menjadi 
 file gambar (dalam format PNG)
 \subsection{Konfigurasi OCR}
-\label{sec:org4cd81da}
+\label{sec:orgef904f5}
 OCR  digunakan untuk merubah file dari image kedalam bentuk text. Dalam pengembangannya 
 Aplikasi TS pernah menggunakan aplikasi pihak ketiga. Beberapa kode terkadang diset oleh 
 developer pihak ketiga atau menggunakan sebuah script yang dibuat prasimax untuk mengirimkan
 data melalui perantara WEB-API. 
 \subsection{Konfigurasi Parser}
-\label{sec:orgc1a8405}
+\label{sec:org63c45ac}
 Parser digunakan untuk memisahkan data teks kedalam beberapa komponent untuk bisa dimunculkan 
 kedalam data transaksi.
-
+\section{Stop Program}
+\label{sec:org326ca2b}
+Beberapa methode bisa anda lakukan dengan untuk melakukan stop program. Anda bisa menggunakan
+perintah top pada bash linux seperti contoh berikut untuk melihat aplikasi apa saja yang 
+sedang berjalan di server
+\begin{verbatim}
+top
+\end{verbatim}
 
 \section{Crontab}
-\label{sec:org3688a22}
+\label{sec:orgd0aa038}
 Jika anda ingin menjalankan program dalam crontab\footnote{Crontab untuk schedulin  \url{https://en.wikipedia.org/wiki/Cron}} anda bisa menggunakan script crontab berikut. 
 Jika kode dibawah tidak bisa berjalan di server anda, anda bisa merubah file \$\{HOME\}
 dengan login user yang anda miliki, pastinya ini dilakukan untuk bisa menjalankan schedule
