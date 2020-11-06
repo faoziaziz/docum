@@ -60,7 +60,13 @@ perintah berikut.
 #+BEGIN_SRC
 sudo killall sh
 #+END_SRC
-
+Jika anda menemukan proses berikut
+#+BEGIN_SRC bash
+ps -axu | grep PM.sh
+almar 9723  0.0  0.0  11272  940 pts/3  S+   21:32   0:00 grep --color=auto PM.sh
+#+END_SRC
+maka anda telah mengekill semua proses sh. Dan satu satunya proses yang terdeteksi adalah proses
+grep yang sedang mencari PM.sh yaitu ps -axu|grep PM.sh itu sendiri.
 * Crontab
 Jika anda ingin menjalankan program dalam crontab[fn:2] anda bisa menggunakan script crontab berikut. 
 Jika kode dibawah tidak bisa berjalan di server anda, anda bisa merubah file ${HOME}
