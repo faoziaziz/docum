@@ -48,6 +48,12 @@ sedang berjalan di server
 #+BEGIN_SRC
 top
 #+END_SRC
+top diatas bisa digunakan untuk mendapatkan nilai PID dari tiap aplikasi yang sedang berajalan.
+Dan anda bisa menjalankan kill untuk menghentikan aplikasi 
+#+BEGIN_SRC
+kill -9 <pid>
+#+END_SRC
+masukkan nilai <pid> dengan nilai pid yang tercantum dalam top atau ps -aux| grep <nama service>
 
 * Crontab
 Jika anda ingin menjalankan program dalam crontab[fn:2] anda bisa menggunakan script crontab berikut. 
