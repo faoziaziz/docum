@@ -1,4 +1,4 @@
-% Created 2020-11-06 Jum 20:24
+% Created 2020-11-06 Jum 20:32
 % Intended LaTeX compiler: pdflatex
 \documentclass[11pt]{article}
 \usepackage[utf8]{inputenc}
@@ -31,11 +31,11 @@
 
 
 \section{Cara mengetahui service running}
-\label{sec:org0721654}
+\label{sec:org0e8c4ea}
 Untuk bisa mengetahui service yang sedang berjalan ada bebarapa perintah
 bisa dilakukan 
 \subsection{Mengetahui running untuk TS-Receiver}
-\label{sec:orgd4d92ee}
+\label{sec:org894eac5}
 Pada dasarnya setiap socket server yang berjalan untuk menerima data dari
 perangkat merupakan sebuah script yang menjalankan sebuah aplikasi biner 
 yang terdapat dalam folder Trumon. Nama file biner tersebut adalah TcpServerTS1.
@@ -44,11 +44,25 @@ link referensi \url{https://en.wikipedia.org/wiki/Ps\_(Unix)}}.
 \begin{verbatim}
 ps -axu | grep TcpServerTS1
 \end{verbatim}
-Untuk mengecek service yang barjalan pada bash anda bisa menggunakan perintah 
-berikut. 
+Untuk mengecek service yang berjalan pada bash anda bisa menggunakan perintah 
+berikut. Biasanya service diletakan pada file script bash maka untuk bisa melihat 
+status file bash sedang berjalan atau tidak bisa menggunakan perintah tersebut.
 \begin{verbatim}
 ps -aux | grep start_Recv4421.sh
 ps -aux | grep start_Parser.sh
 ps -aux | grep PM.sh
+\end{verbatim}
+\section{Crontab}
+\label{sec:org4294d5c}
+Jika anda ingin menjalankan program dalam crontab\footnote{Crontab untuk schedulin  \url{https://en.wikipedia.org/wiki/Cron}} anda bisa menggunakan script crontab berikut. 
+Jika kode dibawah tidak bisa berjalan di server anda, anda bisa merubah file \$\{HOME\}
+dengan login user yang anda miliki, pastinya ini dilakukan untuk bisa menjalankan schedule
+pada aplikasi TS.
+\begin{verbatim}
+# engine pdc prasimax
+ * * * * * /bin/sh /home/${HOME}/Trumon/PrintEmulator/PM.sh
+ * * * * * /bin/sh /home/${HOME}/Trumon/Parser/start_Parser.sh
+ * * * * * /bin/sh /home/${HOME}/Trumon/start_Recv3321.sh
+ * * * * * /bin/sh /home/${HOME}/Trumon/start_Recv4421.sh
 \end{verbatim}
 \end{document}
