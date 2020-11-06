@@ -9,6 +9,7 @@ bisa dilakukan
 Pada dasarnya setiap socket server yang berjalan untuk menerima data dari
 perangkat merupakan sebuah script yang menjalankan sebuah aplikasi biner 
 yang terdapat dalam folder Trumon. Nama file biner tersebut adalah TcpServerTS1.
+Untuk bisa mengetahui running TS-Receiver anda bisa menggunakan perintah ps[fn:1].
 #+BEGIN_SRC bash
 ps -axu | grep TcpServerTS1
 #+END_SRC
@@ -19,3 +20,6 @@ ps -aux | grep start_Recv4421.sh
 ps -aux | grep start_Parser.sh
 ps -aux | grep PM.sh
 #+END_SRC
+
+[fn:1] ps atau process status merupakan program untuk mengetahui program yang sedang berjalan
+link referensi https://en.wikipedia.org/wiki/Ps_(Unix)
