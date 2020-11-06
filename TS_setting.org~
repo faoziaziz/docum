@@ -6,14 +6,9 @@
 Untuk bisa mengetahui service yang sedang berjalan ada bebarapa perintah
 bisa dilakukan 
 ** Mengetahui running untuk TS-Receiver
-Pada dasarnya setiap socket server yang berjalan untuk menerima data dari
-perangkat merupakan sebuah script yang menjalankan sebuah aplikasi biner 
-yang terdapat dalam folder Trumon. Nama file biner tersebut adalah TcpServerTS1.
 #+BEGIN_SRC bash
-ps -axu | grep TcpServerTS1
+ps -aux | grep TSRecevier1
 #+END_SRC
-Untuk mengecek service yang barjalan pada bash anda bisa menggunakan perintah 
-berikut. 
 #+BEGIN_SRC bash
 ps -aux | grep start_Recv4421.sh
 ps -aux | grep start_Parser.sh
