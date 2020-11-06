@@ -1,4 +1,4 @@
-% Created 2020-11-06 Jum 20:08
+% Created 2020-11-06 Jum 20:24
 % Intended LaTeX compiler: pdflatex
 \documentclass[11pt]{article}
 \usepackage[utf8]{inputenc}
@@ -31,8 +31,21 @@
 
 
 \section{Cara mengetahui service running}
-\label{sec:org14c7d58}
-
+\label{sec:org0721654}
+Untuk bisa mengetahui service yang sedang berjalan ada bebarapa perintah
+bisa dilakukan 
+\subsection{Mengetahui running untuk TS-Receiver}
+\label{sec:orgd4d92ee}
+Pada dasarnya setiap socket server yang berjalan untuk menerima data dari
+perangkat merupakan sebuah script yang menjalankan sebuah aplikasi biner 
+yang terdapat dalam folder Trumon. Nama file biner tersebut adalah TcpServerTS1.
+Untuk bisa mengetahui running TS-Receiver anda bisa menggunakan perintah ps\footnote{ps atau process status merupakan program untuk mengetahui program yang sedang berjalan
+link referensi \url{https://en.wikipedia.org/wiki/Ps\_(Unix)}}.
+\begin{verbatim}
+ps -axu | grep TcpServerTS1
+\end{verbatim}
+Untuk mengecek service yang barjalan pada bash anda bisa menggunakan perintah 
+berikut. 
 \begin{verbatim}
 ps -aux | grep start_Recv4421.sh
 ps -aux | grep start_Parser.sh
