@@ -1,0 +1,16 @@
+#+title:  TS-setting
+#+author: TC
+#+date:   2020-11-01
+
+* Cara mengetahui service running
+Untuk bisa mengetahui service yang sedang berjalan ada bebarapa perintah
+bisa dilakukan 
+** Mengetahui running untuk TS-Receiver
+#+BEGIN_SRC bash
+ps -aux | grep TSRecevier1
+#+END_SRC
+#+BEGIN_SRC bash
+ps -aux | grep start_Recv4421.sh
+ps -aux | grep start_Parser.sh
+ps -aux | grep PM.sh
+#+END_SRC
