@@ -21,6 +21,10 @@ ps -aux | grep start_Recv4421.sh
 ps -aux | grep start_Parser.sh
 ps -aux | grep PM.sh
 #+END_SRC
+* Install dependency
+#+BEGIN_SRC bash
+sudo apt-get install qt5-qmake-bin
+#+END_SRC
 * Menjalankan Aplikasi TS
 Beberapa file sebaiknya disimpan dalam direktori /home/${USER} dimana ${USER} merupakan 
 home direktori default ketika dan memasuki server melalui ssh.  Ada Folder yang bernama Trumon
