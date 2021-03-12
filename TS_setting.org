@@ -2,6 +2,18 @@
 #+author: TC
 #+date:   2020-11-01
 
+* Memasang aplikasi Server TS
+
+** Download filenya
+```bash
+wget https://github.com/faoziaziz/kamijara/archive/master.zip
+```
+** extract
+```bash
+unzip master.zip
+```
+
+
 * Cara mengetahui service running
 Untuk bisa mengetahui service yang sedang berjalan ada bebarapa perintah
 bisa dilakukan 
