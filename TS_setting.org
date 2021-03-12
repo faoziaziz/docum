@@ -5,13 +5,14 @@
 * Memasang aplikasi Server TS
 
 ** Download filenya
-```bash
+#+BEGIN_SRC bash
 wget https://github.com/faoziaziz/kamijara/archive/master.zip
-```
+#+END_SRC
+
 ** extract
-```bash
+#+BEGIN_SRC bash
 unzip master.zip
-```
+#+END_SRC
 
 
 * Cara mengetahui service running
