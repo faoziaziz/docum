@@ -97,6 +97,32 @@ pada aplikasi TS.
  * * * * * /bin/sh /home/${HOME}/Trumon/start_Recv4421.sh
 #+END_SRC
 
+* Deskripsi Table
+  ** FileTransferStage1
+  Tabel ini digunakan untuk menampung data yang diterima dari device.
+  Data ini masih berupa pecahan data dengan pecahan tertinggi 1Kb, semisal
+  file data terbesar 64Kb maka dalam tabel tersebut akan memecah sebanyak
+  64 row untuk setiap transaksi. Setiap pecahan data memiliki indexnya sendiri.
+  ** FileTransferStage2
+  Tabel ini digunakan untuk menampung data raw dari FileTransferStage2 yang
+  telah direkonstruksi. Pada Tabel ini jika file yang terdeteksi adalah
+  teks maka bisa langsung di Parsing, jika ternyata Image harus mengalami
+  Proses berikutnya.
+  ** DeviceTabel
+  DeviceTabel merupakan tabel untuk melakukan settingan pada device semisal
+  ingin menset profile Parser, profile Print Emulator atau Pattern pada Aplikasi
+  parsing.
+  ** Ibase
+  Table yang menampung Image yang telah di reconstruksi oleh image reconstruction
+  dalam bentuk Base64.
+  ** Image
+  Table yang menampung Image yang telah di reconstruksi oleh image reconstruction
+  dalam bentuk Image.
+  ** Teks
+  Table untuk menampung Hasil OCR.
+  ** Transaksi
+  Tabel untuk menampung hasil parser.
+
 [fn:1] ps atau process status merupakan program untuk mengetahui program yang sedang berjalan
 link referensi https://en.wikipedia.org/wiki/Ps_(Unix)
 
